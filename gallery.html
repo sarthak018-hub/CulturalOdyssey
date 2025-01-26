@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Gallery with Hover Popup</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* General styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('https://c0.wallpaperflare.com/preview/689/946/423/blurred-background-close-up-colors-dark-green.jpg');
+            padding: 20px;
+        }
+
+        /* Ensure each gallery item has the same size and add a border */
+        .gallery_product {
+            position: relative;
+            margin-bottom: 15px;
+        }
+
+        img {
+            width: 100%;
+            height: 250px; /* Fixed height for all images */
+            object-fit: cover; /* Ensures the image fits within the container without distortion */
+            border: 2px solid #ddd; /* Add a light gray border around each image */
+            border-radius: 8px; /* Optional: Rounded corners */
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+
+        /* Popup effect */
+        .popup {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80%;
+            max-width: 600px;
+            display: none;
+            z-index: 1000;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+        }
+
+        .popup img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .popup-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 999;
+            display: none;
+        }
+
+        /* Hover effect */
+        .gallery_product:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Show popup on hover */
+        .gallery_product:hover .popup {
+            display: block;
+        }
+
+        .gallery_product:hover .popup-overlay {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="filter-gal-par row">
+
+        <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter sprinkle">
+            <img src="images/fiji-surprise/f2.jpg" class="img-responsive">
+            <div class="popup-overlay"></div>
+            <div class="popup">
+                <img src="images/fiji-surprise/f2.jpg" class="img-responsive">
+            </div>
+        </div>
+
+        <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter hdpe">
+            <img src="images/fiji-surprise/f3.jpg" class="img-responsive">
+            <div class="popup-overlay"></div>
+            <div class="popup">
+                <img src="images/fiji-surprise/f3.jpg" class="img-responsive">
+            </div>
+        </div>
+
+        <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter hdpe">
+            <img src="images/fiji-surprise/f1.jpg" class="img-responsive">
+            <div class="popup-overlay"></div>
+            <div class="popup">
+                <img src="images/fiji-surprise/f1.jpg" class="img-responsive">
+            </div>
+        </div>
+
+        <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter spray">
+            <img src="images/fiji-surprise/h1.jpg" class="img-responsive">
+            <div class="popup-overlay"></div>
+            <div class="popup">
+                <img src="images/fiji-surprise/h1.jpg" class="img-responsive">
+            </div>
+        </div>
+
+        <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter sprinkle">
+            <img src="images/fiji-surprise/h2.jpg" class="img-responsive">
+            <div class="popup-overlay"></div>
+            <div class="popup">
+                <img src="images/fiji-surprise/h2.jpg" class="img-responsive">
+            </div>
+        </div>
+
+        <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter spray">
+            <img src="images/fiji-surprise/h3.jpg" class="img-responsive">
+            <div class="popup-overlay"></div>
+            <div class="popup">
+                <img src="images/fiji-surprise/h3.jpg" class="img-responsive">
+            </div>
+        </div>
+
+        <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter sprinkle">
+            <img src="images/fiji-surprise/p1.jpg" class="img-responsive">
+            <div class="popup-overlay"></div>
+            <div class="popup">
+                <img src="images/fiji-surprise/p1.jpg" class="img-responsive">
+            </div>
+        </div>
+
+        <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter hdpe">
+            <img src="images/fiji-surprise/p2.jpg" class="img-responsive">
+            <div class="popup-overlay"></div>
+            <div class="popup">
+                <img src="images/fiji-surprise/p2.jpg" class="img-responsive">
+            </div>
+        </div>
+
+        <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter spray">
+            <img src="images/fiji-surprise/p3.jpg" class="img-responsive">
+            <div class="popup-overlay"></div>
+            <div class="popup">
+                <img src="images/fiji-surprise/p3.jpg" class="img-responsive">
+            </div>
+        </div>
+
+        <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter hdpe">
+            <img src="images/fiji-surprise/g1.jpg" class="img-responsive">
+            <div class="popup-overlay"></div>
+            <div class="popup">
+                <img src="images/fiji-surprise/g1.jpg" class="img-responsive">
+            </div>
+        </div>
+
+        <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter sprinkle">
+            <img src="images/fiji-surprise/g2.jpg" class="img-responsive">
+            <div class="popup-overlay"></div>
+            <div class="popup">
+                <img src="images/fiji-surprise/g2.jpg" class="img-responsive">
+            </div>
+        </div>
+
+        <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter spray">
+            <img src="images/fiji-surprise/g3.jpg" class="img-responsive">
+            <div class="popup-overlay"></div>
+            <div class="popup">
+                <img src="images/fiji-surprise/g3.jpg" class="img-responsive">
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- Bootstrap JS (Optional, for grid layout & responsive behavior) -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
